@@ -19,13 +19,13 @@ public class CharacterControl : GravityEffected {
 
 		moveSpeed = 8f;
 		turnSpeed = 1f;
-		jumpPower = 20f;
+		jumpPower = 24f;
 		isGrounded = true;
 		lScale = transform.localScale.x;
 	}
 	
 	void Update () {
-		if (!g_control.g_onChange) {
+		if (!g_control.G_onChange) {
 			float input_v = Input.GetAxisRaw ("Vertical");
 			float input_h = Input.GetAxisRaw ("Horizontal");
 
@@ -37,81 +37,31 @@ public class CharacterControl : GravityEffected {
 
 			if (isGrounded) {
 				if (Input.GetButtonDown ("Jump")) {
-					//
 					rb2d.velocity -= Physics2D.gravity.normalized * jumpPower;
 				}
 			} 
-			SetVelocity (input_h);
-			GravityChange (input_v, input_h);
+			Move (input_h);
 		}
 	}
 
-	void SetVelocity(float input_h){
+	void Move(float input_h){
 		if (Physics2D.gravity.x == 0)
-			rb2d.velocity = new Vector2(getDir (Physics2D.gravity).x * input_h * moveSpeed, rb2d.velocity.y);
+			rb2d.velocity = new Vector2(HELPER.getDir_Right (Physics2D.gravity).x * input_h * moveSpeed, rb2d.velocity.y);
 		else
-			rb2d.velocity = new Vector2(rb2d.velocity.x, getDir (Physics2D.gravity).y * input_h * moveSpeed);
+			rb2d.velocity = new Vector2(rb2d.velocity.x, HELPER.getDir_Right (Physics2D.gravity).y * input_h * moveSpeed);
 	}
 
-	private Vector2 getDir(Vector3 gravity){//right direction
-		return Vector3.Cross (gravity, new Vector3 (0, 0, -1)).normalized;
+	public void StartRotate(bool rotRight, int _g_mode){
+		StartCoroutine (RotateChar (rotRight, _g_mode));
 	}
 
-	Vector2 g_direction;
-	int g_mode = 0;
-	void GravityChange(float _input_v, float _input_h){
-		if(_input_h == 1 && Input.GetKey (KeyCode.LeftShift)){
-			g_direction = getDir(Physics2D.gravity).normalized;
-
-			g_mode = GetGmode (g_direction);
-			if(g_mode != g_control.g_currentMode){
-				g_control.g_onChange = true;
-				animt.SetBool("Gconvert", g_control.g_onChange);
-				StartCoroutine("RotateChar", true);
-			}
-		}
-		if(_input_v == 1 && Input.GetKey (KeyCode.LeftShift)){
-			g_direction = -Physics2D.gravity.normalized;
-
-			g_mode = GetGmode (g_direction);
-			if(g_mode != g_control.g_currentMode){
-				g_control.g_onChange = true;
-				animt.SetBool("Gconvert", g_control.g_onChange);
-				StartCoroutine("RotateChar", false);
-			}
-		}
-		if(_input_h == -1 && Input.GetKey (KeyCode.LeftShift)){
-			g_direction = -getDir(Physics2D.gravity).normalized;
-
-			g_mode = GetGmode (g_direction);
-			if(g_mode != g_control.g_currentMode){
-				g_control.g_onChange = true;
-				animt.SetBool("Gconvert", g_control.g_onChange);
-				StartCoroutine("RotateChar", false);
-			}
-		}
-	}
-
-	int GetGmode(Vector2 g_direction){
-		if(g_direction.Equals(-Vector2.up))
-			return 0;
-		if(g_direction.Equals(Vector2.right))
-			return 1;
-		if(g_direction.Equals(Vector2.up))
-			return 2;
-		if(g_direction.Equals(-Vector2.right))
-			return 3;
-		
-		return -1;
-	}
-	
-	IEnumerator RotateChar(bool rotRight){
+	private IEnumerator RotateChar(bool rotRight, int _g_mode){
+		animt.SetBool("isRotating", true);
 		Physics2D.gravity = Vector2.zero;
 
-		Quaternion targetRot = GetTargetRotation (g_mode);
+		Quaternion targetRot = GetTargetRotation (_g_mode);
 
 		while(Quaternion.Angle(transform.rotation, targetRot) > 0.2f) {
-			//transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * turnSpeed);
 			if(rotRight)
 				transform.Rotate(new Vector3(0, 0, turnSpeed));
 			else
@@ -119,8 +69,8 @@ public class CharacterControl : GravityEffected {
 			yield return null;
 		}
 
-		g_control.SendMessage("GravityConvert", g_mode);
-		animt.SetBool("Gconvert", g_control.g_onChange);
+		g_control.SendMessage("GravityConvert", _g_mode);
+		animt.SetBool("isRotating", false);
 	}
 
 	Quaternion GetTargetRotation(int _g_mode){
@@ -135,6 +85,9 @@ public class CharacterControl : GravityEffected {
 			return new Quaternion(0, 0, 1, 0);
 		case 3:
 			return new Quaternion(0, 0, sqrt05, -sqrt05);
+		default:
+			Debug.Log ("g_mode not valid");
+			break;
 		}
 
 		return Quaternion.identity;
@@ -153,7 +106,7 @@ public class CharacterControl : GravityEffected {
 
 	void Die(){
 		animt.SetBool ("Die", true);
-		Debug.Log ("Game Over, Restart in 5 seconds...");
+		Debug.Log ("DEAD!");
 		Application.LoadLevel (Application.loadedLevel);
 	}
 

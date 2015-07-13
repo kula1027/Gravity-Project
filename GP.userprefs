@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gravity Related\CharacterControl.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Gravity Related\GravityControl.cs" Line="31" Column="28" />
+      <File FileName="Assets\Scripts\Gravity Related\GravityControlPanel.cs" Line="48" Column="58" />
+      <File FileName="Assets\Scripts\Gravity Related\CharacterControl.cs" Line="14" Column="17" />
+      <File FileName="Assets\Scripts\Gravity Related\GravityEffected.cs" Line="8" Column="30" />
+      <File FileName="Assets\Scripts\Item Related\Door.cs" Line="12" Column="60" />
+      <File FileName="Assets\Scripts\CONFIG.cs" Line="8" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
