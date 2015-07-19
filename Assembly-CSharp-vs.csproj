@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{88D66148-3049-EA4D-E15B-85E0A944F706}</ProjectGuid>
+	<ProjectGuid>{A1D825A9-651A-7C25-513A-B867898A2064}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CONFIG.cs" />
-     <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\CharacterControl.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GEobject.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GravityControl.cs" />
@@ -59,11 +59,10 @@
      <Compile Include="Assets\Scripts\Item Related\InitiateObject.cs" />
      <Compile Include="Assets\Scripts\Item Related\Key.cs" />
      <Compile Include="Assets\Scripts\Item Related\Portal.cs" />
+     <Compile Include="Assets\Scripts\Item Related\Rotate.cs" />
      <Compile Include="Assets\Scripts\Item Related\Switch.cs" />
-     <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\Start Menu\StartMenuButton.cs" />
      <Compile Include="Assets\Scripts\Start Menu\StartMenuManager.cs" />
-     <None Include="Assets\Sprites\Scifi Art Demo Pack\Demo Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

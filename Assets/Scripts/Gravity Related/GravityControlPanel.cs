@@ -4,26 +4,23 @@ using System.Collections;
 public class GravityControlPanel : MonoBehaviour {
 	private bool activated;
 	private GameObject player;
+	private GameObject activeEffect;
 	private GravityControl g_control;
 
 	void Start(){
 		activated = false;
 		player = GameObject.Find ("Player");
+		activeEffect = transform.FindChild("EnergyBall").gameObject;
+		activeEffect.SetActive (false);
 
 		g_control = GameObject.Find ("GravityControl").GetComponent<GravityControl> ();
 	}
 
-	void OnTriggerEnter2D(Collider2D coll){
-		if (coll.gameObject.Equals(player)) {
-			activated = true;
-			Debug.Log (gameObject.name + " Activated");
-		}
-	}
-
 	Vector2 g_direction;
 	int g_mode = 0;
-	void OnTriggerStay2D(Collider2D coll){
-		if (activated && !g_control.G_onChange) {
+	private void OnTriggerStay2D(Collider2D coll){
+		activated = true;
+		if (!g_control.G_onChange) {
 			float input_v = Input.GetAxisRaw ("Vertical");
 			float input_h = Input.GetAxisRaw ("Horizontal");
 
@@ -55,7 +52,7 @@ public class GravityControlPanel : MonoBehaviour {
 		}
 	}
 
-	int GetGmode(Vector2 g_direction){
+	private int GetGmode(Vector2 g_direction){
 		if(g_direction.Equals(-Vector2.up))
 			return 0;
 		if(g_direction.Equals(Vector2.right))
@@ -67,11 +64,59 @@ public class GravityControlPanel : MonoBehaviour {
 		
 		return -1;
 	}
+	
+	#region Trigger
+	void OnTriggerEnter2D(Collider2D coll){
+		if (coll.gameObject.Equals(player)) {
+			activated = true;
+			activeEffect.SetActive(true);
+			Debug.Log (gameObject.name + " Activated");
+
+			StartCoroutine("EffectOn");
+		}
+	}
 
 	void OnTriggerExit2D(Collider2D coll){
 		if (coll.gameObject.Equals(player)) {
 			activated = false;
 			Debug.Log (gameObject.name + " Deactivated");
+
+			StartCoroutine("EffectOff");
 		}
 	}
+	#endregion
+	
+	#region Effect
+	bool beforeState;
+	IEnumerator EffectOn(){
+		beforeState = activated;
+		SpriteRenderer EffectSR = activeEffect.GetComponent<SpriteRenderer> ();
+		while (EffectSR.color.a <= 1) {
+			float ta = EffectSR.color.a + 0.01f;
+			EffectSR.color = new Color(1f, 1f, 1f, ta);
+			Debug.Log (EffectSR.color.a);
+			if(!activated){
+				Debug.Log ("effect on");
+				yield break;
+			}
+			yield return null;
+		}
+	}
+	
+	IEnumerator EffectOff(){
+		SpriteRenderer EffectSR = activeEffect.GetComponent<SpriteRenderer> ();
+		while (EffectSR.color.a >= 0) {
+			float ta = EffectSR.color.a - 0.01f;
+			EffectSR.color = new Color(1f, 1f, 1f, ta);
+			if(activated){
+				Debug.Log ("effect off");
+				yield break;
+			}
+			yield return null;
+		}
+		activeEffect.SetActive (false);
+		Debug.Log ("gone");
+	}
+	
+	#endregion
 }

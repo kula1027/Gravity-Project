@@ -26,7 +26,6 @@ public class CharacterControl : GravityEffected {
 	
 	void Update () {
 		if (!g_control.G_onChange) {
-			float input_v = Input.GetAxisRaw ("Vertical");
 			float input_h = Input.GetAxisRaw ("Horizontal");
 
 			animt.SetFloat ("Input_h", input_h);
@@ -44,7 +43,7 @@ public class CharacterControl : GravityEffected {
 		}
 	}
 
-	void Move(float input_h){
+	private void Move(float input_h){
 		if (Physics2D.gravity.x == 0)
 			rb2d.velocity = new Vector2(HELPER.getDir_Right (Physics2D.gravity).x * input_h * moveSpeed, rb2d.velocity.y);
 		else
@@ -73,7 +72,7 @@ public class CharacterControl : GravityEffected {
 		animt.SetBool("isRotating", false);
 	}
 
-	Quaternion GetTargetRotation(int _g_mode){
+	private Quaternion GetTargetRotation(int _g_mode){
 		float sqrt05 = Mathf.Sqrt (0.5f);
 
 		switch (_g_mode) {
@@ -93,7 +92,7 @@ public class CharacterControl : GravityEffected {
 		return Quaternion.identity;
 	}
 
-	void Flip(float _input_h){
+	private void Flip(float _input_h){
 		Vector2 localS = transform.localScale;
 		if (_input_h == -1) {
 			localS.x = -lScale;
@@ -104,12 +103,18 @@ public class CharacterControl : GravityEffected {
 		transform.localScale = localS;
 	}
 
-	void Die(){
+	public void Die(){
 		animt.SetBool ("Die", true);
 		Debug.Log ("DEAD!");
+		StartCoroutine ("RestartInSeconds", 3);
+	}
+
+	private IEnumerator RestartInSeconds(float _seconds){
+		yield return new WaitForSeconds (_seconds);
 		Application.LoadLevel (Application.loadedLevel);
 	}
 
+	#region Trigger
 	void OnTriggerStay2D(Collider2D coll){
 		if(!coll.isTrigger)
 			isGrounded = true;
@@ -118,17 +123,6 @@ public class CharacterControl : GravityEffected {
 	void OnTriggerExit2D(){
 		isGrounded = false;
 	}
+	#endregion
 }
 
-
-//	void IsGrounded(){
-////		Vector3 gNormalized = Physics2D.gravity.normalized;
-////		Vector2 rayFrom = transform.position + gNormalized * 0.01f;
-////
-////		if (Physics2D.Raycast (rayFrom, Physics2D.gravity.normalized, 0.01f) && 
-////		    Physics2D.Raycast (rayFrom + getDir(gNormalized) * 0.1f, gNormalized, 0.02f) &&
-////		    Physics2D.Raycast (rayFrom - getDir(gNormalized) * 0.1f, gNormalized, 0.02f))
-////			isGrounded = true;
-////		else
-////			isGrounded = false;
-//	}
