@@ -1,11 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Item Related\DangerZone.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Item Related\ExitPortal.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gravity Related\GravityControlPanel.cs" Line="112" Column="30" />
-      <File FileName="Assets\Scripts\Gravity Related\GravityEffected.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gravity Related\CharacterControl.cs" Line="101" Column="22" />
-      <File FileName="Assets\Scripts\Item Related\DangerZone.cs" Line="7" Column="59" />
+      <File FileName="Assets\Scripts\Item Related\ExitPortal.cs" Line="24" Column="37" />
+      <File FileName="..\..\Downloads\Kakao\Alcoholic Dungeon 15.07.20\Assets\Scripts\ScPlay\UI_DragnDrop.cs" Line="1" Column="1" />
+      <File FileName="..\..\Downloads\Kakao\Alcoholic Dungeon 15.07.20\Assets\Scripts\ScPlay\CameraControl.cs" Line="16" Column="30" />
+      <File FileName="..\..\Downloads\Kakao\Alcoholic Dungeon 15.07.20\Assets\Scripts\ScPlay\UI_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HELPER.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CONFIG.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Item Related\Portal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterControl.cs" Line="112" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

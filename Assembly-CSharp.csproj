@@ -48,7 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CONFIG.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\Gravity Related\CharacterControl.cs" />
+     <Compile Include="Assets\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GEobject.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GravityControl.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GravityControlPanel.cs" />
@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\HELPER.cs" />
      <Compile Include="Assets\Scripts\Item Related\DangerZone.cs" />
      <Compile Include="Assets\Scripts\Item Related\Door.cs" />
+     <Compile Include="Assets\Scripts\Item Related\ExitPortal.cs" />
      <Compile Include="Assets\Scripts\Item Related\InitiateObject.cs" />
      <Compile Include="Assets\Scripts\Item Related\Key.cs" />
      <Compile Include="Assets\Scripts\Item Related\Portal.cs" />
