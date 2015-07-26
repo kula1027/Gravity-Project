@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A1D825A9-651A-7C25-513A-B867898A2064}</ProjectGuid>
+	<ProjectGuid>{88D66148-3049-EA4D-E15B-85E0A944F706}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -52,7 +52,7 @@
      <Compile Include="Assets\Scripts\Gravity Related\GEobject.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GravityControl.cs" />
      <Compile Include="Assets\Scripts\Gravity Related\GravityControlPanel.cs" />
-     <Compile Include="Assets\Scripts\Gravity Related\GravityEffected.cs" />
+     <Compile Include="Assets\Scripts\Gravity Related\IngameObject.cs" />
      <Compile Include="Assets\Scripts\HELPER.cs" />
      <Compile Include="Assets\Scripts\Item Related\DangerZone.cs" />
      <Compile Include="Assets\Scripts\Item Related\Door.cs" />

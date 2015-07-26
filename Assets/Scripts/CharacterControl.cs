@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterControl : GravityEffected {
+public class CharacterControl : IngameObject {
 	private Animator animt;
 	private AudioClip aud_jmp;
 
@@ -12,7 +12,7 @@ public class CharacterControl : GravityEffected {
 	float lScale;
 
 	void Start () {
-		GE_Start ();
+		Obj_Start ();
 
 		animt = GetComponent<Animator> ();
 		//aud_jmp = GetComponent<AudioSource> ();

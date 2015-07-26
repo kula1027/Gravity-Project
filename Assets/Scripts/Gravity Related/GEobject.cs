@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GEobject : GravityEffected {
+public class GEobject : IngameObject {
 	void Start () {
-		GE_Start ();
+		Obj_Start ();
 	}
 }

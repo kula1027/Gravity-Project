@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: b138fd00e32fbf24a9bdb18e98e9b5f0
+timeCreated: 1437295851
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: magicshield_0
+    21300002: magicshield_1
+    21300004: magicshield_2
+    21300006: magicshield_3
+    21300008: magicshield_4
+    21300010: magicshield_5
+    21300012: magicshield_6
+    21300014: magicshield_7
+    21300016: magicshield_8
+    21300018: magicshield_9
+    21300020: magicshield_10
+    21300022: magicshield_11
+    21300024: magicshield_12
+    21300026: magicshield_13
+    21300028: magicshield_14
+    21300030: magicshield_15
+    21300032: magicshield_16
+    21300034: magicshield_17
+    21300036: magicshield_18
+    21300038: magicshield_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: magicshield_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 615
+        width: 78
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 615
+        width: 104
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 615
+        width: 122
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_3
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 615
+        width: 133
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_4
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 615
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 423
+        width: 139
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_6
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 423
+        width: 139
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_7
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 423
+        width: 139
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_8
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 423
+        width: 139
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_9
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 426
+        width: 139
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 237
+        width: 139
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 242
+        width: 139
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_12
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 248
+        width: 139
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_13
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 255
+        width: 139
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_14
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 264
+        width: 139
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 83
+        width: 139
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 95
+        width: 136
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 109
+        width: 128
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_18
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 125
+        width: 114
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: magicshield_19
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 142
+        width: 91
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
